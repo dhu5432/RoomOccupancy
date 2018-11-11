@@ -1,1 +1,2 @@
-# CS373Project
+# CS373 Project
+
