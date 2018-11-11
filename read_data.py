@@ -3,7 +3,7 @@ import linear_perceptron
 import numpy as np
 import datetime
 import linear_primalsvm
-
+import linpred
 #in data test.txt we are using first 500 samples as training, and sampels 1000-1100 for testing
 #features_dataframe = pd.read_table('occupancy_data/datatest.txt', sep=",",header=None, usecols=[1,2,3,4,5,6], skiprows=[0])
 #features_dataframe.columns = ["date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"]
@@ -40,6 +40,15 @@ labels_matrix[labels_matrix == 0] = -1
 print(labels_matrix[::500])
 theta = linear_perceptron.run(10000, features_matrix[0:500], labels_matrix[0:500])
 print theta
+count = 0
+for i in range(1000,1100):
+    xii = np.matrix(features_matrix[i])
+    ai = linpred.run(xii,theta)
+    bi = labels_matrix[i]
+    if(ai != bi):
+        print('mistake')
+        count+=1
+print(count,'  = mistakes made')
 #print linear_perceptron.run(1000, features_matrix, labels_matrix)
 #print linear_perceptron.run(10000, features_matrix[::5],labels_matrix[::5])
 #print linear_primalsvm.run(features_matrix, labels_matrix)
