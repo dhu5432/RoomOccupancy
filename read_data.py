@@ -38,10 +38,11 @@ fx,fy = features_matrix.shape
 #print labels.occupancy
 labels_matrix[labels_matrix == 0] = -1
 print(labels_matrix[::500])
-theta = linear_perceptron.run(10000, features_matrix[0:500], labels_matrix[0:500])
+#theta = linear_perceptron.run(10000, features_matrix[0:500], labels_matrix[0:500])
+theta = linear_perceptron.run(10000, features_matrix[::2],labels_matrix[::2])
 print theta
 count = 0
-for i in range(1000,1100):
+for i in range(1,len(features_matrix),2):
     xii = np.matrix(features_matrix[i])
     ai = linpred.run(xii,theta)
     bi = labels_matrix[i]
