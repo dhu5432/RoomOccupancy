@@ -9,7 +9,7 @@ def run(L,X,y):
     (n,d)=np.shape(X)
     theta = np.zeros((d, 1))
     for i in range(0, L):
-	X, y = shuffle_in_unison(X,y)
+	#X, y = shuffle_in_unison(X,y)
         for t in range(0, n):
             if (y[t] * (np.dot(X[t],  theta))[0]) <= 0:
                 theta = theta + np.array([y[t]* X[t]]).T

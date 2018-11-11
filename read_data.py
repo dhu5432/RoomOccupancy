@@ -3,7 +3,6 @@ import linear_perceptron
 import numpy as np
 import datetime
 import linear_primalsvm
-import createsepdata
 
 #features_dataframe = pd.read_table('occupancy_data/datatest.txt', sep=",",header=None, usecols=[1,2,3,4,5,6], skiprows=[0])
 #features_dataframe.columns = ["date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"]
@@ -34,11 +33,12 @@ for date_time in features_matrix:
 	index+=1
 	
 #print features_matrix
-
+fx,fy = features_matrix.shape
 #print labels.occupancy
-
+labels_matrix[labels_matrix == 0] = -1
+print(labels_matrix[::500])
 print linear_perceptron.run(100, features_matrix, labels_matrix)
 
-print linear_perceptron.run(1000, features_matrix, labels_matrix)
-
+#print linear_perceptron.run(1000, features_matrix, labels_matrix)
+#print linear_perceptron.run(10000, features_matrix[::5],labels_matrix[::5])
 #print linear_primalsvm.run(features_matrix, labels_matrix)
