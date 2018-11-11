@@ -4,6 +4,7 @@ import numpy as np
 import datetime
 import linear_primalsvm
 
+#in data test.txt we are using first 500 samples as training, and sampels 1000-1100 for testing
 #features_dataframe = pd.read_table('occupancy_data/datatest.txt', sep=",",header=None, usecols=[1,2,3,4,5,6], skiprows=[0])
 #features_dataframe.columns = ["date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"]
 #print features.HumidityRatio
@@ -37,8 +38,8 @@ fx,fy = features_matrix.shape
 #print labels.occupancy
 labels_matrix[labels_matrix == 0] = -1
 print(labels_matrix[::500])
-print linear_perceptron.run(100, features_matrix, labels_matrix)
-
+theta = linear_perceptron.run(10000, features_matrix[0:500], labels_matrix[0:500])
+print theta
 #print linear_perceptron.run(1000, features_matrix, labels_matrix)
 #print linear_perceptron.run(10000, features_matrix[::5],labels_matrix[::5])
 #print linear_primalsvm.run(features_matrix, labels_matrix)
