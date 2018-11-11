@@ -36,5 +36,5 @@ for date_time in features_matrix:
 
 #print labels.occupancy
 
-#print sol_linperceptron.run(100, features_matrix, labels_matrix)
+print sol_linperceptron.run(100, features_matrix, labels_matrix)
 
