@@ -64,7 +64,7 @@ def read_training_data_no_date():
 def read_testing_data2():
 
 	features_dataframe = pd.read_table('Data/datatest2.txt', sep=",",header=None, usecols=[2,3,4,5,6], skiprows=[0])
-	features_dataframe.columns = ["Temperatures", "Humidity", "Light", "CO2", "HumidityRatio"]
+	features_dataframe.columns = ["date/time","Temperatures", "Humidity", "Light", "CO2", "HumidityRatio"]
 
 
 
@@ -75,7 +75,7 @@ def read_testing_data2():
 
 	labels_dataframe.columns = ["occupancy"]
 	labels_matrix = labels_dataframe.values
-	'''
+	
 	index = 0
 	for date_time in features_matrix:
 		splitted = date_time[0].split()
@@ -84,7 +84,7 @@ def read_testing_data2():
 		date_time = x.seconds
 		features_matrix[index][0] = date_time
 		index+=1
-	'''	
+	
 	fx,fy = features_matrix.shape
 	labels_matrix[labels_matrix == 0] = -1
 	
@@ -92,8 +92,8 @@ def read_testing_data2():
 
 def read_testing_data1():
 
-	features_dataframe = pd.read_table('Data/datatest.txt', sep=",",header=None, usecols=[2,3,4,5,6], skiprows=[0])
-	features_dataframe.columns = ["Temperatures", "Humidity", "Light", "CO2", "HumidityRatio"]
+	features_dataframe = pd.read_table('Data/datatest.txt', sep=",",header=None, usecols=[1,2,3,4,5,6], skiprows=[0])
+	features_dataframe.columns = ["data/test","Temperatures", "Humidity", "Light", "CO2", "HumidityRatio"]
 
 
 
@@ -104,7 +104,7 @@ def read_testing_data1():
 
 	labels_dataframe.columns = ["occupancy"]
 	labels_matrix = labels_dataframe.values
-	'''
+
 	index = 0
 	for date_time in features_matrix:
 		splitted = date_time[0].split()
@@ -113,7 +113,7 @@ def read_testing_data1():
 		date_time = x.seconds
 		features_matrix[index][0] = date_time
 		index+=1
-	'''	
+	
 	fx,fy = features_matrix.shape
 	labels_matrix[labels_matrix == 0] = -1
 	
