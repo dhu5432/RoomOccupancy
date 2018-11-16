@@ -1,4 +1,3 @@
-
 import pandas as pd
 import linear_perceptron
 import numpy as np
@@ -59,7 +58,7 @@ def main():
 		if(ai != bi):
 			mistakes_count+=0
 	
-	print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with all features included\n". format(count, str(iterations1),sum(1 for line in open('Data/datatraining.txt'))-1))
+	print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with no date\n". format(count, str(iterations1),sum(1 for line in open('Data/datatraining.txt'))-1))
 
 
 
