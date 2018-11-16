@@ -8,11 +8,11 @@ import kerperceptron
 import kerpred
 import read_data
 def main():	
-	for a in range(0,1):
+	for a in range(0,10):
 		iterations1=10000
 		features_matrix, labels_matrix = read_data.read_training_data()
 		#print(labels_matrix[::500])
-		theta = linear_perceptron.run(10, features_matrix[0:500], labels_matrix[0:500])
+		theta = linear_perceptron.run(1000, features_matrix[0:500], labels_matrix[0:500])
 		#theta = linear_perceptron.run(iterations1, features_matrix,labels_matrix)
 		count = 0
 		for i in range(0,len(features_matrix)):
