@@ -23,7 +23,7 @@ def main():
 			ai = linpred.run(xii, theta)
 			bi = labels_matrix_all[i]
 			if(ai != bi):
-				mistakes_count+=0
+				mistakes_count+=1
 		
 		print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with all features included; linear perceptron\n". format(mistakes_count, str(10000),sum(1 for line in open('Data/datatraining.txt'))-1))
 
@@ -39,7 +39,7 @@ def main():
 			ai = linpred.run(xii, theta)
 			bi = labels_matrix_all[i]
 			if(ai != bi):
-				mistakes_count+=0
+				mistakes_count+=1
 		
 		print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with all features included; linear perceptron\n". format(mistakes_count, str(100000),sum(1 for line in open('Data/datatraining.txt'))-1))
 	
@@ -57,7 +57,7 @@ def main():
 			ai = linpred.run(xii, theta)
 			bi = labels_matrix_no_date[i]
 			if(ai != bi):
-				mistakes_count+=0
+				mistakes_count+=1
 		
 		print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with no date; linear perceptron\n". format(mistakes_count, str(10000),sum(1 for line in open('Data/datatraining.txt'))-1))
 	
@@ -71,7 +71,7 @@ def main():
 			ai = linpred.run(xii, theta)
 			bi = labels_matrix_no_date[i]
 			if(ai != bi):
-				mistakes_count+=0
+				mistakes_count+=1
 		
 		print("{0} mistakes made on {1} iterations on {2} data points in datatraining.txt with no date; linear perceptron\n". format(mistakes_count, str(100000),sum(1 for line in open('Data/datatraining.txt'))-1))
 		print("\n")
