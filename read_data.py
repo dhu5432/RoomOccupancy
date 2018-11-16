@@ -5,18 +5,12 @@ import datetime
 import linear_primalsvm
 import linpred
 
-<<<<<<< HEAD
-def read_data():
-	features_dataframe = pd.read_table('Data/datatraining.txt', sep=",",header=None, usecols=[1,2,3,4,5,6], skiprows=[0])
-	features_dataframe.columns = ["Date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"]
-=======
 def read_training_data():
 
 	features_dataframe = pd.read_table('Data/datatraining.txt', sep=",",header=None, usecols=[2,3,4,5,6], skiprows=[0])
 	features_dataframe.columns = ["Temperatures", "Humidity", "Light", "CO2", "HumidityRatio"]
 
 
->>>>>>> 996012694c7bcd1c5f39b2b5d848f2071cabb2c3
 
 	features_matrix = features_dataframe.values
 
