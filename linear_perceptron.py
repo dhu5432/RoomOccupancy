@@ -39,13 +39,13 @@ def linpred(theta,x):
 
 def run():
 	t = PrettyTable(['# of iterations', '# of mistakes', 'Date included?'])
-	iteration_number=[10000,100000]
+	iteration_number = 10000
 	for a in range(0,2):		
 		#Reading the data from the training set with all features included
 		features_matrix_all, labels_matrix_all = read_data.read_training_data_all()
 	
 		#Running our linear perceptron on 10,000/100,000 iterations
-		theta = train(iteration_number[a], features_matrix_all, labels_matrix_all)
+		theta = train(iteration_number, features_matrix_all, labels_matrix_all)
 	
 		#Testing convergence by seeing if the perceptron will make any mistakes predicting on the same data it trained on
 		mistakes_count = 0
@@ -56,24 +56,26 @@ def run():
 			if(ai != bi):
 				mistakes_count+=1
 			
-		t.add_row([iteration_number[a], mistakes_count, "Yes"])
+		t.add_row([iteration_number, mistakes_count, "Yes"])
 	
 	for b in range(0,2):
 		#Reading the data from the training set with no date/time feature
-		features_matrix_no_date, labels_matrix_no_date = read_data.read_training_no_time()
+		features_matrix_no_time, labels_matrix_no_time = read_data.read_training_data_no_time()
 		
 		#Running our linear perceptron with no date on 10,000/100,000 iterations
-		theta = train(iteration_number[b], features_matrix_no_date, labels_matrix_no_time)
+		theta = train(iteration_number, features_matrix_no_time, labels_matrix_no_time)
 		
 		#Testing convergence by seeing if the perceptron will make any mistakes predicting on the same data it trained on
 		mistakes_count = 0
-		for i in range(0, len(features_matrix_no_date)):
-			xii = np.matrix(features_matrix_no_date[i])
+		for i in range(0, len(features_matrix_no_time)):
+			xii = np.matrix(features_matrix_no_time[i])
 			ai = linpred(xii, theta)
-			bi = labels_matrix_no_date[i]
+			bi = labels_matrix_no_time[i]
 			if(ai != bi):
 				mistakes_count+=1
 		
-		t.add_row([iteration_number[b], mistakes_count, "No"])	
+		t.add_row([iteration_number, mistakes_count, "No"])	
 	print t
 
+if __name__=='__main__':
+	run()
