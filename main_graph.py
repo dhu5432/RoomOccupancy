@@ -19,10 +19,10 @@ def main():
 	pp.xlabel('Feature')
 	pp.ylabel('Mean')
 	pp.figure()
-	pp.plot(s, 'ro') # r for red, o for circle
+	#pp.plot(s, 'ro') # r for red, o for circle
 	#pp.xlabel('Feature')
 	#pp.ylabel('Standard deviation')
-	#pp.show() # This command will show the two figures, and wait
+	pp.show() # This command will show the two figures, and wait
   
 
 
