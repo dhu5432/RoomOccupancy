@@ -10,7 +10,7 @@ import matplotlib.pyplot as pp
 def main():
 	
 
-	X, y = read_data.read_training_data_all()
+	X, y = read_data.read_training_data_no_time()
 
 	m = np.mean(X, axis=0)
 	#s = np.std(X, axis=0)
