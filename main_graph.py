@@ -16,7 +16,7 @@ def run():
 	s = np.std(X1, axis=0)
 	pp.figure()
 	pp.xticks(np.arange(6), ('Time', 'Temperatures', 'Humidity', 'Light', 'CO2', 'HumidityRatio'))
-	pp.title('Mean vs. Feature')
+	pp.title('Fetures vs. Mean')
 	pp.plot(m, 'b+') # b for blue, + for cross
 	pp.xlabel('Feature')
 	pp.ylabel('Mean')
@@ -24,7 +24,7 @@ def run():
 	pp.xticks(np.arange(5), ('Temperatures', 'Humidity', 'Light', 'CO2', 'HumidityRatio'))
 	pp.plot(s, 'ro') # r for red, o for circle
 	pp.xlabel('Feature')
-	pp.title('Standard Deviation vs. Feature')
+	pp.title('Features vs. Standard Deviation')
 	pp.ylabel('Standard deviation')
 	#pp.show() # This command will show the two figures, and wait
 	
