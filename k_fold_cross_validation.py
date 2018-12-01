@@ -4,7 +4,7 @@ import linear_perceptron
 import read_data
 import rbf_svm
 from prettytable import PrettyTable
-def run(k,X,y, shuffle=False):
+def run(k,X,y,c, shuffle=False):
 	(n, d) = np.shape(X)
 	accuracy_percentage = []
 	if shuffle==False:
@@ -42,7 +42,7 @@ def run(k,X,y, shuffle=False):
 					rest[rest_row, column] = X[a, column]
 					rest_labels[rest_row, 0] = y[a]
 				rest_row+=1
-		clf = rbf_svm.train(1, rest, rest_labels)
+		clf = rbf_svm.train(c, rest, rest_labels)
 		correctly_classified=0
 		mistakes = 0
 		for z in range(len(fold)):
@@ -64,16 +64,23 @@ def run(k,X,y, shuffle=False):
 	for i in accuracy_percentage:
 		variance += (i-accuracy_average)**2
 	variance = variance/k
+	print "C value: {0}".format(c)
 	print "Average accuracy (mean): {0}".format(accuracy_average)
 	print "Variance of accuracy: {0}".format(variance)
 	print "Standard deviation of accuracy: {0}".format(math.sqrt(variance))
 	
 
 if __name__=='__main__':
-	features_matrix, labels_matrix = read_data.read_training_data_all()
+	features_matrix, labels_matrix = read_data.read_testing_data2_all()
+	features1_matrix, labels_matrix1 = read_data.read_testing_data1_all()
+	print features_matrix.shape
+	print features1_matrix.shape
+	features2_matrix = np.vstack((features_matrix, features1_matrix))
+	labels2_matrix = np.vstack((labels_matrix, labels_matrix1))
 	user_input = raw_input("Would you like to shuffle the data before performing validation? (y, n) ")
 	shuffle = True
 	if user_input == 'n' or user_input=='N':
 		shuffle = False
 	user_input1 = raw_input("How many folds? ")
-	run(int(user_input1), features_matrix, labels_matrix, shuffle)
+	c = raw_input("What do you want your C value to be? ")
+	run(int(user_input1), features2_matrix, labels2_matrix, int(c),  shuffle)

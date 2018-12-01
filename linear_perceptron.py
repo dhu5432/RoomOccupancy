@@ -40,7 +40,7 @@ def linpred(theta,x):
 
 def run():
 	t = PrettyTable(['# of iterations', '# of mistakes', 'Date included?'])
-	iteration_number = 10000
+	iteration_number = 100
 	
 	for a in range(0,2):		
 		#Reading the data from the training set with all features included
