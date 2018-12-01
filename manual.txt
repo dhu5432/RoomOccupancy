@@ -1,0 +1,14 @@
+Manual for running code:
+
+In the CS373Project directory, run:
+	python main.py
+Type 1 to run the linear perceptrion.
+Type 2 to run the radial basis kernel support vector machine.
+Type 3 and specify constants to run the k fold cross validation on the RBF SVM.
+Type 4 to see all the graphs.
+
+
+External libraries and tools:
+
+	pip install PrettyTable
+
