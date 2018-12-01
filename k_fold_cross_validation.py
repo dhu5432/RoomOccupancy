@@ -71,10 +71,11 @@ def run(k,X,y,c, shuffle=False):
 	
 
 if __name__=='__main__':
+	main()
+
+def main():
 	features_matrix, labels_matrix = read_data.read_testing_data2_all()
 	features1_matrix, labels_matrix1 = read_data.read_testing_data1_all()
-	print features_matrix.shape
-	print features1_matrix.shape
 	features2_matrix = np.vstack((features_matrix, features1_matrix))
 	labels2_matrix = np.vstack((labels_matrix, labels_matrix1))
 	user_input = raw_input("Would you like to shuffle the data before performing validation? (y, n) ")
