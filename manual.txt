@@ -1,17 +1,22 @@
 Manual for running code:
 
-In the CS373Project directory, run:
+1) In the CS373Project directory, run:
 	python main.py
-Type 1 to run the linear perceptrion.
-Type 2 to run the radial basis kernel support vector machine.
-Type 3 and specify constants to run the k fold cross validation on the RBF SVM.
-Type 4 to see all the graphs.
 
+2) Type 1 to run the linear perceptron. We changed the number of iterations to 100. However, in our final report we did 1000 and 10,000. This is so when the grader runs it will complete in around 20 seconds. To modify this, change the constant in linear_perceptron.py.
+
+3) Type 2 to run the radial basis kernel support vector machine. This should run in around 20 seconds.
+
+4) Type 3 and specify the number of folds. (We recommend 10) This will run the cross validation on the RBF SVM. This should run in 20 seconds. 
+
+5) Type 4 to see all the graphs. There should be 17 figures in total.
 
 External libraries and tools:
 
+	mandatory:
 	pip install PrettyTable
+
+	other installations if needed:
+	pip install -U scikit-learn
 	pip install pandas
 	pip install matplotlib
-
-	
