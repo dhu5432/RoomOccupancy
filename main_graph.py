@@ -11,7 +11,7 @@ def main():
 	
 
 	X, y = read_data.read_training_data_no_time()
-
+	"""
 	m = np.mean(X, axis=0)
 	#s = np.std(X, axis=0)
 	pp.figure()
@@ -23,9 +23,15 @@ def main():
 	#pp.xlabel('Feature')
 	#pp.ylabel('Standard deviation')
 	pp.show() # This command will show the two figures, and wait
-  
+	"""
 
-
+	theta = rbf_svm.train(10,X,y)
+	pp.figure()
+	pp.plot(theta, 'b.') # b for blue, . for dot
+	pp.xlabel('Feature')
+	pp.ylabel('Theta')
+ 	pp.show() # This command will show the figure, and wait 
+	
 
 
 
