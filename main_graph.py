@@ -7,7 +7,7 @@ import k_fold_cross_validation
 import rbf_svm
 import matplotlib.pyplot as pp
 
-def main():
+def run():
 	
 
 	X, y = read_data.read_training_data_no_time()
