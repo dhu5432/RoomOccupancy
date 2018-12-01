@@ -41,7 +41,7 @@ def run():
 		for j in range(i,6):
 			if i != j:
 				pp.figure()
-				pp.title('Feature vs. Feature: ' + str(names[i]) + ' vs. ' + str(names[j]))
+				pp.title(str(names[i]) + ' vs. ' + str(names[j]))
 				pp.plot(X[positive_samples,i], X[positive_samples,j], 'b.') # b for blue, o for circle
 				pp.plot(X[negative_samples,i], X[negative_samples,j], 'r.') # r for red, o for circle
 				pp.xlabel('Feature: '+str(names[i]))
