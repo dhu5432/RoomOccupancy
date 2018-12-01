@@ -11,4 +11,7 @@ Type 4 to see all the graphs.
 External libraries and tools:
 
 	pip install PrettyTable
+	pip install pandas
+	pip install matplotlib
 
+	

@@ -40,8 +40,8 @@ def linpred(theta,x):
 
 def run():
 	t = PrettyTable(['# of iterations', '# of mistakes', 'Date included?'])
-	#iteration_number = 10000
-	iteration_number = 100
+	iteration_number = 10000
+	
 	for a in range(0,2):		
 		#Reading the data from the training set with all features included
 		features_matrix_all, labels_matrix_all = read_data.read_training_data_all()
@@ -49,19 +49,6 @@ def run():
 		#Running our linear perceptron on 10,000/100,000 iterations
 		theta = train(iteration_number, features_matrix_all, labels_matrix_all)
 
-#graph
-
-		pp.figure()
-		pp.plot(theta, 'b.') # b for blue, . for dot
-		pp.xlabel('Feature')
-		pp.ylabel('Theta')
-		pp.show() # This command will show the figure, and wait
-
-
-
-#graph
-
-	
 		#Testing convergence by seeing if the perceptron will make any mistakes predicting on the same data it trained on
 		mistakes_count = 0
 		for i in range(0, len(features_matrix_all)):
