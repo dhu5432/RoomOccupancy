@@ -1,7 +1,6 @@
 Manual for running code:
 
-1) In the CS373Project directory, run:
-	python main.py
+1) Run main.py
 
 2) Type 1 to run the linear perceptron. We changed the number of iterations to 100. However, in our final report we did 1000 and 10,000. This is so when the grader runs it will complete in around 60 seconds (at worst). To modify this, change the iteration number in linear_perceptron.py (Line 43).
 
