@@ -93,5 +93,5 @@ follows:
 
 As we can see, the reuslts/accuracy of our RBF SVM is far better when shuffling the data before cross validating. From our cross validation, we have determined that our RBF SVM with a C (slack) value of 100 is a good classifier for this data set. 
 
-
+To replicate the results we got, see [manual.txt](https://github.com/dhu5432/RoomOccupancy/blob/master/manual.txt) for instructions on how to run the code. 
 
